@@ -4,8 +4,8 @@ __PVbrain__ is an opensource/openhardware project to monitor/control __simultane
 
 - Direct communication and control with (most) voltronic/pipsolar inverters via a __direct ethernet cable__ (pvbrain got a builtin RS232=>TTL). RS485 communication is also possible for non-voltronic inverters, but not yet tested. Important parameters can be set directly from HA (or the webserver if activated)
 - Monitor a BMS (tested with JKBMS but should work with the antBMS or the daly)
-- Perform the deection up to 3xAC sources (solar/grid/other) (in order to make a soft switching for the ATS part for example)
-- Monitor via 2xPZEM-004T V3 (modbus) both the solar & grid productions
+- Perform the detection up to 3xAC sources (solar/grid/other) (in order for example to make a soft switching for the ATS part)
+- Monitor _via_ 2xPZEM-004T V3 (modbus) both the solar & grid productions
 - Control up to 16xrelays, _i.e._ for an ATS control or the inverter mode of modern voltronic inverter (Axpert max I & II for exxample)
 - Monitor temperature/humidity/pressure of your basement (you can setup alarms in case)
 - Free I2C ports available to plug extra I2C sensors
@@ -19,10 +19,9 @@ The PVbrain represents a joint work between e-2-nomy [https://www.youtube.com/c/
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain2.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain3d.JPG)
 
-
 ## __additional daughter board addons__:
 
-An optional addon card can be pluged to control direct voltage of your PV strings (up to two)
+An optional addon card can be pluged to monitor direct voltages of your PV strings (up to two)
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-arrière.JPG)
@@ -32,7 +31,6 @@ An optional addon card can be pluged to control direct voltage of your PV string
 ## __Wiring with your hybrid inverter and BMS__:
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/schema%20de%20c%C3%A2blage.jpg)
-
 
 ## __Bill Of Materials (BOM)__:
 please find all electronic parts required to assemble the PVBrain:
@@ -58,14 +56,12 @@ esphome_password: "your_wifi_password"
 ```
 - save the file
 
-
 ### step 2:
 From your console, compile and upload via the following command
 _>esphome run pvbrain.yaml_
 
 If you want only to compile the file, please run instead
 _>esphome compile pvbrain.yaml_
-
 
 ## __Choose your PIPsolar/Voltronic inverter__:
 
