@@ -10,9 +10,11 @@ __PVbrain__ is an opensource/openhardware project to monitor/control most of Vol
 - Monitor temperature/humidity/pressure of your basement
 - Free I2C ports available to plug extra I2C sensors
 
-## __PCB Layout__:
-
+## __ Main PCB Layout__:
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain1.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain2.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain3d.JPG)
+
+
+##__addinional daughter board addons __
