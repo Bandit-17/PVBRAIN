@@ -32,6 +32,11 @@ An optional addon card can be pluged to monitor direct voltages of your PV strin
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/schema%20de%20c%C3%A2blage.jpg)
 
+Example of realization with an Voltronic Axpert max II (pip8048 branch)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/20220505_113239.jpg)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/20220505_161247.jpg)
+
+
 ## __Bill Of Materials (BOM)__:
 please find all electronic parts required to assemble the PVBrain:
 [https://github.com/Bandit-17/PVBRAIN/blob/main/BOM_PVBRAIN__OPTION1.xlsx](https://github.com/Bandit-17/PVBRAIN/blob/main/BOM_PVBRAIN__OPTION1.xlsx)
