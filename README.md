@@ -101,4 +101,5 @@ Entities allowing to control some impprtant inverter parameters :
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/HA_view_2.jpg)
 
 
+If you need some extra informations, please feel free to contact us in Discord at: [https://reseautono.me](https://reseautono.me) 
 
