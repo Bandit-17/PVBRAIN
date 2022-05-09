@@ -61,8 +61,8 @@ _>esphome compile pvbrain.yaml_
 
 ## __Choose your PIPsolar/Voltronic inverter__:
 
-In the first header part of the pcbrain.yaml, you can find in the external section where you can spefify your PIPsolar/voltrinic inverter
-Actually, the PVbrain.yaml uses the pip8048 branch (with 2 MPPT strings).
+In the first header part of the pvbrain.yaml, you can find in the external section, the place where you can spefify your particular PIPsolar/voltrinic inverter
+Actually, the current PVbrain.yaml uses the pip8048 branch (with 2 MPPT strings).
 
 ```
 external_components:
@@ -71,7 +71,7 @@ external_components:
   - source: github://syssi/esphome-pipsolar@pip8048
     refresh: 0s
 ```
-Most of former models has one mppt and the main branch must be prefered as:
+Most of former models has one mppt and the main branch must be prefered:
 ```
 external_components:
   - source: github://syssi/esphome-jk-bms@main
@@ -80,7 +80,7 @@ external_components:
     ref
  ```   
 
-For very old (24V) inverter, another branch can be used
+For very old (24V) inverters, another branch can be used
 ```
 external_components:
   - source: github://syssi/esphome-jk-bms@main
