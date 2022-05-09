@@ -9,3 +9,10 @@ PVbrain is an opensource/openhardware project to monitor/control most of Voltron
 - Control up to 16 relays, i.e. for an ATS control or the inverter mode of the voltronic system
 - Monitor temperature/humidity/pressure of your basement
 - Free I2C port available to plug extra I2C sensors
+
+PCB Layout!
+
+
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain1.JPG)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain2.JPG)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain3d.JPG)
