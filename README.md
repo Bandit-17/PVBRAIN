@@ -17,4 +17,4 @@ __PVbrain__ is an opensource/openhardware project to monitor/control most of Vol
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain3d.JPG)
 
 
-##__addinional daughter board addons __
+## __addinional daughter board addons__:
