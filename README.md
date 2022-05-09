@@ -10,7 +10,7 @@ PVbrain is an opensource/openhardware project to monitor/control most of Voltron
 - Monitor temperature/humidity/pressure of your basement
 - Free I2C port available to plug extra I2C sensors
 
-PCB Layout!
+PCB Layout:
 
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain1.JPG)
