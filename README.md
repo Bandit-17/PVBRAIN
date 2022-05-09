@@ -30,5 +30,26 @@ An optional addon card can be pluged to control direct voltage of your PV string
 please find all electronic parts required to assemble the PVBrain:
 [https://github.com/Bandit-17/PVBRAIN/blob/main/BOM_PVBRAIN__OPTION1.xlsx](https://github.com/Bandit-17/PVBRAIN/blob/main/BOM_PVBRAIN__OPTION1.xlsx)
 
+## __To compile the ESPhome pvbrain.yaml file__:
+
+__Before to compile__
+
+You need __absoluptly__ to compile the yaml from a Linux or a Windows box, not (yet) from HASSIO directly since the addon HASSIO module __don't support yet the arduino V2.0 Lib__. The arduino V2.0 lib is required ir order to increase the loop stack memory
+
+Here is a (french) video how to install ESPhome on a windows platform:
+[![Alt text](https://www.youtube.com/watch?v=lawVsX6XMeE)](https://www.youtube.com/watch?v=lawVsX6XMeE)
+
+- please download the [pvbrain.yaml](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain.yaml) in your local folder
+- in the same folder, create an empty secrets.yaml where you will write inside
+esphome_ssid: "your_SSID"
+esphome_password: "your_wifi_password"
+
+
+
+From your console, compile and upload via the following command
+##>esphome run pvbrain.yaml##
+If you want only to compile the file, please run instead
+##>esphome compile pvbrain.yaml##
+
 
 
