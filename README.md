@@ -28,7 +28,7 @@ An optional addon card can be pluged to monitor direct voltages of your PV strin
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-3D1.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-3D2.JPG)
 
-## __Wiring with your hybrid inverter and BMS__:
+## __Wiring with your hybrid inverter and your BMS__ with the PVbrain PCB:
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/schema%20de%20c%C3%A2blage.jpg)
 
