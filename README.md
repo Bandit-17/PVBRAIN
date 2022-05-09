@@ -45,9 +45,11 @@ __compilation procedure__:
 
 ### step 1:
 - please download the [pvbrain.yaml](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain.yaml) in your local folder
-- in the same folder, create an empty secrets.yaml where you will write inside
+- in the same folder, create an empty _secrets.yaml_ where you will write inside:
+```
 esphome_ssid: "your_SSID"
 esphome_password: "your_wifi_password"
+```
 - save the file
 
 
