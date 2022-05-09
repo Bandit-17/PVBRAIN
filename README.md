@@ -91,3 +91,14 @@ external_components:
     ref
  ``` 
 
+## __Home assistant entities import__:
+After a successfully firmware update, Home assistant will auto discover the new integration. Please add (all) associated entities:
+
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/HA_view_1.jpg)
+
+Entities allowing to control some impprtant inverter parameters : 
+
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/HA_view_2.jpg)
+
+
+
