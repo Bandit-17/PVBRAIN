@@ -19,7 +19,17 @@ __PVbrain__ is an opensource/openhardware project to monitor/control __simultane
 
 ## __additional daughter board addons__:
 
+An optional addon card can be pluged to control direct voltage of your PV strings (up to two)
+
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-arrière.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-3D1.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-3D2.JPG)
+
+## __Bill Of Materials (BOM)__:
+please find all electronic parts required to assemble the PVBrain
+
+[![Alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/BOM_PVBRAIN__OPTION1.xlsx)](https://github.com/Bandit-17/PVBRAIN/blob/main/BOM_PVBRAIN__OPTION1.xlsx)
+
+
+
