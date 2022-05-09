@@ -63,8 +63,8 @@ _>esphome compile pvbrain.yaml_
 
 ## __Choose your PIPsolar/Voltronic inverter__:
 
-In the first header part of the pvbrain.yaml, you can find in the external section, the place where you can spefify your particular PIPsolar/voltrinic inverter
-Actually, the current PVbrain.yaml uses the pip8048 branch (with 2 MPPT strings).
+In the first header part of the pvbrain.yaml, you can find in the external section, the place where you can spefify your particular PIPsolar/voltronic inverter
+Actually, the current PVbrain.yaml uses the pip8048 branch (with 2xMPPT strings).
 
 ```
 external_components:
