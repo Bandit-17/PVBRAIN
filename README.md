@@ -57,7 +57,7 @@ esphome_password: "your_wifi_password"
 - save the file
 
 ### step 2:
-From your console, compile and upload via the following command
+From your console, compile and upload _via_ the following command
 _>esphome run pvbrain.yaml_
 
 If you want only to compile the file, please run instead
@@ -65,7 +65,7 @@ _>esphome compile pvbrain.yaml_
 
 ## __Choose your PIPsolar/Voltronic inverter__:
 
-In the first header part of the pvbrain.yaml, you can find in the external section, the place where you can spefify your particular PIPsolar/voltronic inverter
+In the first header part of the _pvbrain.yaml_, you can find in the external section, the place where you can spefify your particular PIPsolar/voltronic inverter
 Actually, the current PVbrain.yaml uses the pip8048 branch (with 2xMPPT strings).
 
 ```
@@ -83,7 +83,6 @@ external_components:
   - source: github://syssi/esphome-pipsolar@main
     ref
  ```   
-
 For very old (24V) inverters, another branch can be used
 ```
 external_components:
@@ -94,7 +93,7 @@ external_components:
  ``` 
 
 ## __Home assistant entities import__:
-After a successfully firmware update, Home assistant will auto discover the new integration. Please add (all) associated entities:
+After a successful firmware update, Home assistant will auto discover the new integration. Please add (all) associated entities in your favorarite HA dashboard. Here is an example of my current PVbrain dashboard
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/HA_view_1.jpg)
 
@@ -104,4 +103,3 @@ Entities allowing to control some important inverter parameters:
 The yaml used last template number/select/switch esphome objects. Everything is directly imported from ESPhome into HA. No extra HA configuration required.
 
 If you need some extra informations, please feel free to contact us in Discord at: [https://reseautono.me](https://reseautono.me) 
-
