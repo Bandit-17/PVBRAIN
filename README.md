@@ -10,7 +10,8 @@ __PVbrain__ is an opensource/openhardware project to monitor/control __simultane
 - Monitor temperature/humidity/pressure of your basement (you can setup alarms in case)
 - Free I2C ports available to plug extra I2C sensors
 
-This PCB uses the excellent ESPhome integrations done by @syssi available at [https://github.com/syssi](https://github.com/syssi)
+This PCB uses the excellent ESPhome integrations done by @syssi available at [https://github.com/syssi](https://github.com/syssi).
+The PVbrain represents a joint work between e-2-nomy [https://www.youtube.com/c/e2nomy/](https://www.youtube.com/c/e2nomy/) and Bandit-17.
 
 ## __Main PCB Layout__:
 
