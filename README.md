@@ -96,10 +96,10 @@ After a successfully firmware update, Home assistant will auto discover the new 
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/HA_view_1.jpg)
 
-Entities allowing to control some impprtant inverter parameters : 
+Entities allowing to control some important inverter parameters: 
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/HA_view_2.jpg)
-
+The yaml used last template number/select/switch esphome objects. Everything is directly imported from ESPhome into HA. No extra HA configuration required.
 
 If you need some extra informations, please feel free to contact us in Discord at: [https://reseautono.me](https://reseautono.me) 
 
