@@ -1,4 +1,4 @@
-# PVBRAIN
+# PVbrain
 
 __PVbrain__ is an opensource/openhardware project to monitor/control __simultaneously__ a PIPsolar/Voltronic Inverter (most of) and a BMS (JKBMS/AntBMS/DalyBMS). It adds also the possibility to control up to 16 relay allowing for example to control an Automatic Transfert Switch (ATS) (Offgrid<=>return to grid). The PCB board uses only crossing components or pluging ones in order to have an easy setup/maintenance. The MCU used is an ESP32 running ESPhome allowing communication by WiFi to Home Assistant (HA) natively (but MQTT can be added easily). Main features are:
 
