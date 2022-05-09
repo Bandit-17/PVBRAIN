@@ -29,6 +29,11 @@ An optional addon card can be pluged to control direct voltage of your PV string
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-3D1.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-3D2.JPG)
 
+## __Wiring with your hybrid inverter and BMS__:
+
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/schema%20de%20c%C3%A2blage.jpg)
+
+
 ## __Bill Of Materials (BOM)__:
 please find all electronic parts required to assemble the PVBrain:
 [https://github.com/Bandit-17/PVBRAIN/blob/main/BOM_PVBRAIN__OPTION1.xlsx](https://github.com/Bandit-17/PVBRAIN/blob/main/BOM_PVBRAIN__OPTION1.xlsx)
