@@ -19,6 +19,13 @@ The PVbrain represents a joint work between e-2-nomy [https://www.youtube.com/c/
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain2.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain3d.JPG)
 
+__Gerber files__:
+
+Please find all gerber files required for the PCB into the following zip file:
+[https://github.com/Bandit-17/PVBRAIN/blob/main/Gerber_PCB_PV%20BRAIN%20V1.0.zip](https://github.com/Bandit-17/PVBRAIN/blob/main/Gerber_PCB_PV%20BRAIN%20V1.0.zip)
+
+
+
 ## __additional daughter board addons__:
 
 An optional addon card can be pluged to monitor direct voltages of your PV strings (up to two)
@@ -27,6 +34,12 @@ An optional addon card can be pluged to monitor direct voltages of your PV strin
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-arrière.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-3D1.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain-option1-3D2.JPG)
+
+__Gerber files__:
+
+Please find all gerber files required for the addon PCB into the following zip file:
+[https://github.com/Bandit-17/PVBRAIN/blob/main/Gerber_PCB_pvbrain-carte-option1.zip](https://github.com/Bandit-17/PVBRAIN/blob/main/Gerber_PCB_pvbrain-carte-option1.zip)
+
 
 ## __Wiring your hybrid inverter and your BMS__ with the PVbrain PCB:
 
