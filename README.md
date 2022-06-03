@@ -19,6 +19,9 @@ The PVbrain represents a joint work between e-2-nomy [https://www.youtube.com/c/
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain2.JPG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain3d.JPG)
 
+__PCB assembly__:
+![Alt text](https://www.youtube.com/watch?v=k4qtnl1ytJM](https://www.youtube.com/watch?v=L8BgsNVZh5w)
+
 __Gerber files__:
 
 Please find all gerber files required for the PCB into the following zip file:
