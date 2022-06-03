@@ -21,6 +21,8 @@ The PVbrain represents a joint work between e-2-nomy [https://www.youtube.com/c/
 
 __PCB assembly__:
 
+Please check this youtube video how to assemble your PVbrain PCB
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/L8BgsNVZh5w/0.jpg)](https://www.youtube.com/watch?v=L8BgsNVZh5w)
 
 __Gerber files__:
