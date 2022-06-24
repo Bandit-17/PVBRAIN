@@ -1471,7 +1471,7 @@ sensor:
     icon: mdi:power
     update_interval: 10s
     lambda: |-
-      return ( id(template_pvbrain_jkbms_battery_discharging_power_veille).state = id(pvbrain_jkbms_battery_discharging_power_veille_global) );
+      return ( id(template_pvbrain_jkbms_battery_discharging_power_veille).state = id(pvbrain_jkbms_battery_discharging_power_veille_global).state );
 
 text_sensor:
   - platform: template
