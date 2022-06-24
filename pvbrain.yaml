@@ -93,7 +93,7 @@ time:
 
         - globals.set:
             id: pvbrain_grid_veille_global
-            value: !lambda return ( id(pvbrain_grid_veille_global) = float( id(pvbrain_grid_puissance_du_jour).state) );
+            value: !lambda return (id(pvbrain_grid_veille_global) = float(id(pvbrain_grid_puissance_du_jour).state));
 
 #        - sensor.template.publish:
 #            id: template_pvbrain_solar_veille
@@ -101,8 +101,7 @@ time:
 
         - globals.set:
             id: pvbrain_solar_veille_global
-            value: !lambda return ( id(pvbrain_solar_veille_global) = float( id(pvbrain_solar_puissance_du_jour).state) );
-
+            value: !lambda return (id(pvbrain_solar_veille_global) = float(id(pvbrain_solar_puissance_du_jour).state));
 
 #        - sensor.template.publish:
 #            id: template_pvbrain_axpert_PV_power_total_veille
@@ -110,7 +109,7 @@ time:
 
         - globals.set:
             id: pvbrain_axpert_PV_power_total_veille_global
-            value: !lambda return ( id(pvbrain_axpert_PV_power_total_veille_global) = float( id(pvbrain_axpert_PV_power_total_du_jour).state) );
+            value: !lambda return (id(pvbrain_axpert_PV_power_total_veille_global) = float(id(pvbrain_axpert_PV_power_total_du_jour).state));
 
 #        - sensor.template.publish:
 #            id: template_pvbrain_axpert_ac_output_active_power_veille
@@ -118,7 +117,7 @@ time:
 
         - globals.set:
             id: pvbrain_axpert_ac_output_active_power_veille_global
-            value: !lambda return ( id(pvbrain_axpert_ac_output_active_power_veille_global) = float( id(pvbrain_axpert_ac_output_active_power_total_du_jour).state) );
+            value: !lambda return (id(pvbrain_axpert_ac_output_active_power_veille_global) = float(id(pvbrain_axpert_ac_output_active_power_total_du_jour).state));
 
 #        - sensor.template.publish:
 #            id: template_pvbrain_jkbms_battery_charging_power_veille
@@ -126,7 +125,7 @@ time:
 
         - globals.set:
             id: pvbrain_jkbms_battery_charging_power_veille_global
-            value: !lambda return ( id(pvbrain_jkbms_battery_charging_power_veille_global) = float( id(pvbrain_jkbms_battery_charging_power_total_du_jour).state) );
+            value: !lambda return (id(pvbrain_jkbms_battery_charging_power_veille_global) = float(id(pvbrain_jkbms_battery_charging_power_total_du_jour).state));
 
 #        - sensor.template.publish:
 #            id: template_pvbrain_jkbms_battery_discharging_power_veille
@@ -134,7 +133,7 @@ time:
 
         - globals.set:
             id: pvbrain_jkbms_battery_discharging_power_veille_global
-            value: !lambda return ( id(pvbrain_jkbms_battery_discharging_power_veille_global) = float( id(pvbrain_jkbms_battery_discharging_power_total_du_jour).state) );
+            value: !lambda return (id(pvbrain_jkbms_battery_discharging_power_veille_global) = float(id(pvbrain_jkbms_battery_discharging_power_total_du_jour).state));
 
 ####################### UART #######################
 
@@ -541,7 +540,7 @@ number:
       then:
         - output.pipsolar.set_level:
             id: pvbrain_axpert_battery_bulk_voltage_set
-            value: !lambda return (float(id(pvbrain_axpert_battery_bulk_voltage_number).state));
+            value: !lambda return float(id(pvbrain_axpert_battery_bulk_voltage_number).state);
 
   - platform: template
     name: pvbrain_axpert_battery_float_voltage_number
@@ -559,7 +558,7 @@ number:
       then:
         - output.pipsolar.set_level:
             id: pvbrain_axpert_battery_float_voltage_set
-            value: !lambda return (float(id(pvbrain_axpert_battery_float_voltage_number).state));
+            value: !lambda return float(id(pvbrain_axpert_battery_float_voltage_number).state);
 
   - platform: template
     name: pvbrain_axpert_current_max_charging_current_number
@@ -577,7 +576,7 @@ number:
       then:
         - output.pipsolar.set_level:
             id: pvbrain_axpert_current_max_charging_current_set
-            value: !lambda return (id(pvbrain_axpert_current_max_charging_current_number).state);
+            value: !lambda return id(pvbrain_axpert_current_max_charging_current_number).state;
 
   - platform: template
     name: pvbrain_axpert_battery_under_voltage_number
@@ -595,7 +594,7 @@ number:
       then:
         - output.pipsolar.set_level:
             id: pvbrain_axpert_battery_under_voltage_set
-            value: !lambda return (id(pvbrain_axpert_battery_under_voltage_number).state);
+            value: !lambda return id(pvbrain_axpert_battery_under_voltage_number).state;
 
   - platform: template
     name: pvbrain_axpert_battery_recharge_voltage_number
@@ -613,7 +612,7 @@ number:
       then:
         - output.pipsolar.set_level:
             id: pvbrain_axpert_battery_recharge_voltage_set
-            value: !lambda return (id(pvbrain_axpert_battery_recharge_voltage_number).state);
+            value: !lambda return id(pvbrain_axpert_battery_recharge_voltage_number).state;
 
   ######### Seuils Automatic Switch Transfert ########
 
@@ -704,10 +703,9 @@ binary_sensor:
       if (id(pvbrain_axpert_grid_voltage).state > 0) {
         // Grid is connected
         return true;
-      } else {
-        // Grid is disconnected.
-        return false;
       }
+      // Grid is disconnected
+      return false;
 
 button:
   - platform: template
@@ -854,7 +852,7 @@ sensor:
     accuracy_decimals: 1
     update_interval: 5s
     icon: mdi:power
-    lambda: return (( (id(pvbrain_grid_energy).state)/1000.0));
+    lambda: return id(pvbrain_grid_energy).state / 1000.0f;
 
   - platform: total_daily_energy
     name: "pvbrain_grid_du_jour"
@@ -875,8 +873,7 @@ sensor:
     accuracy_decimals: 2
     icon: mdi:power
     update_interval: 10s
-    lambda: |-
-      return (id(template_pvbrain_grid_veille).state = id(pvbrain_grid_veille_global));
+    lambda: return (id(template_pvbrain_grid_veille).state = id(pvbrain_grid_veille_global));
 
   - platform: template
     name: "pvbrain_grid_puissance_apparente"
@@ -886,12 +883,10 @@ sensor:
     update_interval: 5s
     icon: mdi:power
     lambda: |-
-      if (float(id(pvbrain_grid_facteur_puissance).state) != 0.0){
-        return ( (id(pvbrain_grid_puissance).state/id(pvbrain_grid_facteur_puissance).state));
+      if (float(id(pvbrain_grid_facteur_puissance).state) != 0.0f) {
+        return id(pvbrain_grid_puissance).state / id(pvbrain_grid_facteur_puissance).state;
       }
-      else{
-        return id(pvbrain_grid_puissance).state;
-      }
+      return id(pvbrain_grid_puissance).state;
 
   - platform: template
     name: "pvbrain_grid_puissance_reactive"
@@ -900,7 +895,7 @@ sensor:
     accuracy_decimals: 2
     update_interval: 5s
     icon: mdi:power
-    lambda: return (  id(pvbrain_grid_puissance).state*sin(acos( id(pvbrain_grid_facteur_puissance).state ))  );
+    lambda: return id(pvbrain_grid_puissance).state * sin(acos(id(pvbrain_grid_facteur_puissance).state));
 
   ########### PZEM2 SOLAR PV ##################
 
@@ -940,7 +935,7 @@ sensor:
     accuracy_decimals: 1
     update_interval: 5s
     icon: mdi:power
-    lambda: return (( (id(pvbrain_solar_energy).state)/1000.0));
+    lambda: return id(pvbrain_solar_energy).state / 1000.0f;
 
   - platform: total_daily_energy
     name: "pvbrain_solar_du_jour"
@@ -972,12 +967,11 @@ sensor:
     update_interval: 5s
     icon: mdi:power
     lambda: |-
-      if (float(id(pvbrain_solar_facteur_puissance).state) != 0.0){
-        return ( (id(pvbrain_solar_puissance).state/id(pvbrain_solar_facteur_puissance).state));
+      if (float(id(pvbrain_solar_facteur_puissance).state) != 0.0f) {
+        return id(pvbrain_solar_puissance).state / id(pvbrain_solar_facteur_puissance).state;
       }
-      else{
-        return id(pvbrain_solar_puissance).state;
-      }
+      return id(pvbrain_solar_puissance).state;
+
   - platform: template
     name: "pvbrain_solar_puissance_reactive"
     id: pvbrain_solar_puissance_reactive
@@ -985,7 +979,7 @@ sensor:
     accuracy_decimals: 2
     update_interval: 5s
     icon: mdi:power
-    lambda: return (  id(pvbrain_solar_puissance).state*sin(acos( id(pvbrain_solar_facteur_puissance).state ))  );
+    lambda: return id(pvbrain_solar_puissance).state * sin(acos(id(pvbrain_solar_facteur_puissance).state));
 
   ############# BME 280  ##################
 
@@ -1015,7 +1009,7 @@ sensor:
     # id: pvbrain_PV1_voltage
     # update_interval: 5s
     # filters:
-    # - lambda: return x*(500/4.096);
+    # - lambda: return x * (500.0f/4.096f);
 
   # - platform: ads1115
     # multiplexer: 'A2_A3'
@@ -1024,7 +1018,7 @@ sensor:
     # id: pvbrain_PV2_voltage
     # update_interval: 5s
     # filters:
-    # - lambda: return x*(500/4.096);
+    # - lambda: return x * (500.0f/4.096f);
 
   - platform: pipsolar
     pipsolar_id: pip8048
@@ -1165,7 +1159,7 @@ sensor:
     accuracy_decimals: 1
     update_interval: 2s
     icon: mdi:power
-    lambda: return ( (id(pvbrain_axpert_pv1_charging_power).state) + (id(pvbrain_axpert_pv2_charging_power).state) );
+    lambda: return id(pvbrain_axpert_pv1_charging_power).state + id(pvbrain_axpert_pv2_charging_power).state;
 
   - platform: total_daily_energy
     name: pvbrain_axpert_PV_power_total_du_jour
@@ -1187,7 +1181,7 @@ sensor:
     icon: mdi:power
     update_interval: 10s
     lambda: |-
-      return ( id(template_pvbrain_axpert_PV_power_total_veille).state = id(pvbrain_axpert_PV_power_total_veille_global) );
+      return (id(template_pvbrain_axpert_PV_power_total_veille).state = id(pvbrain_axpert_PV_power_total_veille_global));
 
 
   - platform: total_daily_energy
@@ -1210,7 +1204,7 @@ sensor:
     icon: mdi:power
     update_interval: 10s
     lambda: |-
-      return ( id(template_pvbrain_axpert_ac_output_active_power_veille).state = id(pvbrain_axpert_ac_output_active_power_veille_global) );
+      return (id(template_pvbrain_axpert_ac_output_active_power_veille).state = id(pvbrain_axpert_ac_output_active_power_veille_global));
 
   # - platform: template
     # name: "pvbrain_axpert_battery_charging_power"
@@ -1219,7 +1213,7 @@ sensor:
     # accuracy_decimals: 1
     # update_interval: 2s
     # icon: mdi:power
-    # lambda: return ( (id(pvbrain_axpert_battery_voltage).state) * (id(pvbrain_axpert_battery_charging_current).state) );
+    # lambda: return id(pvbrain_axpert_battery_voltage).state * id(pvbrain_axpert_battery_charging_current).state;
 
   # - platform: total_daily_energy
     # name: pvbrain_axpert_battery_charging_power_total_du_jour
@@ -1248,7 +1242,7 @@ sensor:
     # accuracy_decimals: 1
     # update_interval: 2s
     # icon: mdi:power
-    # lambda: return ( (id(pvbrain_axpert_battery_voltage).state) * (id(pvbrain_axpert_battery_discharge_current).state) );
+    # lambda: return id(pvbrain_axpert_battery_voltage).state * id(pvbrain_axpert_battery_discharge_current).state;
 
   # - platform: total_daily_energy
     # name: pvbrain_axpert_battery_discharging_power_total_du_jour
@@ -1328,7 +1322,7 @@ sensor:
               and:
                 - switch.is_on: pvbrain_ats_automatic_control
                 - lambda: |-
-                    return ( ( float(id(pvbrain_jkbms_total_voltage).state) < float(id(pvbrain_inverseur_tension_bascule_solar_to_grid_number).state) )     );
+                    return float(id(pvbrain_jkbms_total_voltage).state) < float(id(pvbrain_inverseur_tension_bascule_solar_to_grid_number).state);
             then:
               - script.execute: script_from_solar_to_grid
 
@@ -1337,7 +1331,7 @@ sensor:
               and:
                 - switch.is_on: pvbrain_ats_automatic_control
                 - lambda: |-
-                    return ( ( float(id(pvbrain_jkbms_total_voltage).state) > float(id(pvbrain_inverseur_tension_bascule_solar_to_grid_number).state) )     );
+                    return float(id(pvbrain_jkbms_total_voltage).state) > float(id(pvbrain_inverseur_tension_bascule_solar_to_grid_number).state);
             then:
               - script.execute: script_from_grid_to_solar
 
@@ -1383,12 +1377,10 @@ sensor:
     update_interval: 2s
     icon: mdi:current-dc
     lambda: |-
-      if (float(id(pvbrain_jkbms_current).state)> 0){
-        return ( (id(pvbrain_jkbms_current).state) );
+      if (float(id(pvbrain_jkbms_current).state) > 0) {
+        return id(pvbrain_jkbms_current).state;
       }
-      else {
-        return 0.0;
-      }
+      return 0.0;
 
   - platform: template
     name: "pvbrain_jkbms_battery_charging_power"
@@ -1423,7 +1415,7 @@ sensor:
     icon: mdi:power
     update_interval: 10s
     lambda: |-
-      return ( id(template_pvbrain_jkbms_battery_charging_power_veille).state = id(pvbrain_jkbms_battery_charging_power_veille_global) );
+      return (id(template_pvbrain_jkbms_battery_charging_power_veille).state = id(pvbrain_jkbms_battery_charging_power_veille_global));
 
   - platform: template
     name: "pvbrain_jkbms_battery_discharging_current"
@@ -1434,7 +1426,7 @@ sensor:
     icon: mdi:current-dc
     lambda: |-
       if (float(id(pvbrain_jkbms_current).state) < 0) {
-        return ( (id(pvbrain_jkbms_current).state) );
+        return id(pvbrain_jkbms_current).state;
       }
       return 0.0;
 
@@ -1447,7 +1439,7 @@ sensor:
     icon: mdi:power
     lambda: |-
       if (float(id(pvbrain_jkbms_current).state) < 0) {
-        return ( -(id(pvbrain_jkbms_total_voltage).state) * (id(pvbrain_jkbms_current).state) );
+        return -1.0 * id(pvbrain_jkbms_total_voltage).state * id(pvbrain_jkbms_current).state;
       }
       return 0.0;
 
@@ -1471,13 +1463,13 @@ sensor:
     icon: mdi:power
     update_interval: 10s
     lambda: |-
-      return ( id(template_pvbrain_jkbms_battery_discharging_power_veille).state = id(pvbrain_jkbms_battery_discharging_power_veille_global) );
+      return (id(template_pvbrain_jkbms_battery_discharging_power_veille).state = id(pvbrain_jkbms_battery_discharging_power_veille_global));
 
 text_sensor:
   - platform: template
     name: pvbrain_uptime
     lambda: |-
-      int seconds = (id(uptime_sec).state);
+      int seconds = id(uptime_sec).state;
       int days = seconds / (24 * 3600);
       seconds = seconds % (24 * 3600);
       int hours = seconds / 3600;
@@ -1492,7 +1484,7 @@ text_sensor:
     name: pvbrain_remaining_time
     lambda: |-
       if(id(pvbrain_jkbms_current).state<0) {
-        int seconds = int(id(pvbrain_jkbms_capacity_remaining).state*0.01*id(pvbrain_jkbms_total_battery_capacity_setting).state/(-id(pvbrain_jkbms_current).state)*(3600));
+        int seconds = int(id(pvbrain_jkbms_capacity_remaining).state * 0.01 * id(pvbrain_jkbms_total_battery_capacity_setting).state / -1.0 * id(pvbrain_jkbms_current).state * 3600);
         int days = seconds / (24 * 3600);
         seconds = seconds % (24 * 3600);
         int hours = seconds / 3600;
@@ -1501,8 +1493,9 @@ text_sensor:
         seconds = seconds % 60;
         return { ("Discharging time to go: " + String(days) +"d " + String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
       }
-      else if(id(pvbrain_jkbms_current).state>0){
-        int seconds = int((1.0-float(id(pvbrain_jkbms_capacity_remaining).state)*0.01)*float(id(pvbrain_jkbms_total_battery_capacity_setting).state)/float(id(pvbrain_jkbms_current).state)*(3600));
+
+      if(id(pvbrain_jkbms_current).state > 0) {
+        int seconds = int((1.0 - float(id(pvbrain_jkbms_capacity_remaining).state) * 0.01) * float(id(pvbrain_jkbms_total_battery_capacity_setting).state) / float(id(pvbrain_jkbms_current).state) * 3600);
         int days = seconds / (24 * 3600);
         seconds = seconds % (24 * 3600);
         int hours = seconds / 3600;
@@ -1511,9 +1504,8 @@ text_sensor:
         seconds = seconds % 60;
         return { ("Charging time to go: " + String(days) +"d " + String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
       }
-      else{
-        return {""};
-      }
+
+      return {""};
     icon: mdi:clock-start
     update_interval: 5s
 
@@ -1524,10 +1516,9 @@ text_sensor:
       if (isnan(id(pvbrain_axpert_battery_type).state)) {
         return {"KO"};
       }
-      else {
-        static const char *battery_list[] = {"AGn", "FLd", "USE", "PYL", "EC", "SOL"};
-        return {battery_list[int(id(pvbrain_axpert_battery_type).state)]};
-      }
+      static const char *battery_list[] = {"AGn", "FLd", "USE", "PYL", "EC", "SOL"};
+      return {battery_list[int(id(pvbrain_axpert_battery_type).state)]};
+
     update_interval: 5s
   - platform: template
     name: pvbrain_axpert_output_source_priority_text
@@ -1536,10 +1527,8 @@ text_sensor:
       if (isnan(id(pvbrain_axpert_output_source_priority).state)) {
         return {"KO"};
       }
-      else {
-        static const char *sources_list[] = {"USB", "SUB", "SBU"};
-        return {sources_list[int(id(pvbrain_axpert_output_source_priority).state)]};
-      }
+      static const char *sources_list[] = {"USB", "SUB", "SBU"};
+      return {sources_list[int(id(pvbrain_axpert_output_source_priority).state)]};
     update_interval: 5s
 
   # - platform: pipsolar
