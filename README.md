@@ -6,7 +6,7 @@ __PVbrain__ is an opensource/openhardware project to monitor/control __simultane
 - Monitor a BMS (tested with JKBMS but should work with the antBMS or the daly)
 - Perform the detection up to 3xAC sources (solar/grid/other) (in order for example to make a soft switching for the ATS part)
 - Monitor _via_ 2xPZEM-004T V3 (modbus) both the solar & grid productions
-- Control up to 16xrelays, _i.e._ for an ATS control or the inverter mode of modern voltronic inverter (Axpert max I & II for exxample)
+- Control up to 16xrelays, _i.e._ for an ATS control or the inverter mode of modern voltronic inverter (Axpert max I & II for example)
 - Monitor temperature/humidity/pressure of your basement (you can setup alarms in case)
 - Free I2C ports available to plug extra I2C sensors
 
