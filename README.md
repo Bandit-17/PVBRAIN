@@ -73,9 +73,9 @@ __compilation procedure__:
 
 ### step 1:
 - run anaconda powershell prompt
-- create a local folder via the mkdir command, e.g.  _mkdir pvbrain_    and enter inside via the command cd, e.g _cd pvbrain_
+- create a local folder via the mkdir command, _e.g._  _>mkdir pvbrain_    and enter inside _via_ the command cd, e.g _>cd pvbrain_
 - please download the [pvbrain.yaml](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain.yaml) in your local folder
-- in the same folder, create an empty _secrets.yaml_ where you will write inside:
+- in the same folder, create an empty _secrets.yaml_ file where you will write inside:
 ```
 esphome_ssid: "your_SSID"
 esphome_password: "your_wifi_password"
