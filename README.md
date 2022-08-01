@@ -72,6 +72,8 @@ Here is a (french) video showhing how to install ESPhome on a windows platform:
 __compilation procedure__:
 
 ### step 1:
+- run anaconda powershell prompt
+- create a local folder via the mkdir command, e.g.  _mkdir pvbrain_    and enter inside via the command cd, e.g _cd pvbrain_
 - please download the [pvbrain.yaml](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain.yaml) in your local folder
 - in the same folder, create an empty _secrets.yaml_ where you will write inside:
 ```
