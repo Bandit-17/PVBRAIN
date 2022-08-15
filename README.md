@@ -72,7 +72,7 @@ __Gerber files:
 
 Please find all gerber files required for the PCB into the following zip file: https://github.com/Bandit-17/PVBRAIN/blob/main/Gerber_carte_option-2.zip
 with additional diagram: https://github.com/Bandit-17/PVBRAIN/blob/main/Schematic_carte_option-2.pdf
-to finish the list of components: https://github.com/Bandit-17/PVBRAIN/blob/main/Schematic_carte_option-2.pdf
+to finish the list of components: https://github.com/Bandit-17/PVBRAIN/blob/main/BOM_Carte-option2.csv
 
 ## __Wiring your hybrid inverter and your BMS__ with the PVbrain PCB:
 
