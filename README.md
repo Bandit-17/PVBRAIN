@@ -46,6 +46,33 @@ __Gerber files__:
 Please find all gerber files required for the addon PCB into the following zip file:
 [https://github.com/Bandit-17/PVBRAIN/blob/main/Gerber_PCB_pvbrain-carte-option1.zip](https://github.com/Bandit-17/PVBRAIN/blob/main/Gerber_PCB_pvbrain-carte-option1.zip)
 
+## __Additional Additions to Daughterboard #2__:
+
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/option%202.PNG)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/option%202-2.PNG)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/option-2-3D.PNG)
+
+The 3 UART outputs are arranged on a terminal block
+-- one of the inputs has the RS323/TTL converter option (UART0)
+-- 3 PZEM connectors + one output on terminal block (UART2)
+-- one of the inputs has the Linky option (UART3) but also available on a terminal block without the option
+
+A PCF8075 card for 16 I2c bus outputs
+-- Possibility of attaching a (4) Relay card to this card.
+-- 2 additional I2c bus outputs on terminal blocks
+
+Options for future development:
+-- Two Dallas Probe outputs
+-- a dht22 sensor output
+-- A DC clamp input (I added an RC filter following the experience of the solar router).
+-- Two AC clamp inputs
+-- All usable GPIOs are output on terminal blocks so as to be able to upgrade as much as possible.
+
+__Gerber files:
+
+Please find all gerber files required for the PCB into the following zip file: https://github.com/Bandit-17/PVBRAIN/blob/main/Gerber_carte_option-2.zip
+with additional diagram: https://github.com/Bandit-17/PVBRAIN/blob/main/Schematic_carte_option-2.pdf
+to finish the list of components: https://github.com/Bandit-17/PVBRAIN/blob/main/Schematic_carte_option-2.pdf
 
 ## __Wiring your hybrid inverter and your BMS__ with the PVbrain PCB:
 
