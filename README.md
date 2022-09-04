@@ -48,6 +48,9 @@ Please find all gerber files required for the addon PCB into the following zip f
 
 ## __Additional Additions to Daughterboard #2__:
 
+Please check this youtube video explaining the operation of the OPTION2 board (in French)
+ (https://youtu.be/SeJNZs6UUr4)
+
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/option%202.PNG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/option%202-2.PNG)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/option-2-3D.PNG)
