@@ -160,7 +160,7 @@ Entities allowing to control some important inverter parameters:
 The yaml used last template number/select/switch esphome objects. Everything is directly imported from ESPhome into HA. No extra HA configuration required.
 
 
-## Multi-PZEM 004T V3 configuration__:
+## __Multi-PZEM 004T V3 configuration__:
 If you install both PZEM 004T V3, both have the same modbus adress by factory default. You need to change the adress for the second one.
 To do these please refer to this (french) video:
 https://www.youtube.com/watch?v=O6QESZfJMcM&t=58s
