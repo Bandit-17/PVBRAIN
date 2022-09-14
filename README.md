@@ -123,6 +123,7 @@ _>esphome compile pvbrain.yaml_
 
 In the first header part of the _pvbrain.yaml_, you can find in the external section, the place where you can spefify your particular PIPsolar/voltronic inverter
 Actually, the current PVbrain.yaml uses the pip8048 branch (with 2xMPPT strings).
+N.B even with the pip8048 branch, it should work fine with Voltronic with one unique MPPT input.
 
 ```
 external_components:
@@ -157,5 +158,13 @@ Entities allowing to control some important inverter parameters:
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/HA_view_2.jpg)
 The yaml used last template number/select/switch esphome objects. Everything is directly imported from ESPhome into HA. No extra HA configuration required.
+
+
+## Multi-PZEM 004T V3 configuration__:
+If you install both PZEM 004T V3, both have the same modbus adress by factory default. You need to change the adress for the second one.
+To do these please refer to this (french) video:
+https://www.youtube.com/watch?v=O6QESZfJMcM&t=58s
+
+
 
 If you need some extra informations, please feel free to contact us in Discord at: [https://reseautono.me](https://reseautono.me)  => channel _#bla-bla-pvbrain_
