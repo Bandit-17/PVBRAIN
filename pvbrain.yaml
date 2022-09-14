@@ -647,7 +647,7 @@ binary_sensor:
     name: "pvbrain_status"
 
   - platform: gpio
-    pin: GPIO13
+    pin: GPIO14
     name: pvbrain_grid_230V
     id: pvbrain_grid_230V
     filters:
@@ -655,7 +655,7 @@ binary_sensor:
       - delayed_off: 100ms
 
   - platform: gpio
-    pin: GPIO14
+    pin: GPIO13
     name: pvbrain_pv_230V
     id: pvbrain_pv_230V
     filters:
