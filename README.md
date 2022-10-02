@@ -80,6 +80,7 @@ to finish the list of components: https://github.com/Bandit-17/PVBRAIN/blob/main
 ## __Wiring your hybrid inverter and your BMS__ with the PVbrain PCB:
 
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/schema%20de%20c%C3%A2blage.jpg)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/schema%20de%20c%C3%A2blage%20grid-tired.jpg)
 
 Example of realization with an Voltronic Axpert max II (pip8048 branch)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/20220505_113239.jpg)
