@@ -1405,7 +1405,7 @@ sensor:
                 - lambda: |-
                     return id(pvbrain_jkbms_total_voltage).state > id(pvbrain_inverseur_tension_bascule_solar_to_grid_number).state;
             then:
-#########   GRID-TIRED or OFF-GRID #####              
+#########   GRID-TIRED or OFF-GRID #####
 #              - script.execute: script_mode_batterie
 #########   OFF-GRID or GRID ######
               - script.execute: script_from_grid_to_solar
@@ -1673,27 +1673,27 @@ script:
             - switch.turn_on: pvbrain_relay_axpert  ### turn on solar inverter
             - delay: 13s
             - switch.turn_off: pvbrain_relay_inversor_solar_input  ### switch to PV source
-            
-            
- #########   GRID-TIRED or OFF-GRID #####           
+
+
+ #########   GRID-TIRED or OFF-GRID #####
 #  - id: script_mode_EDF
 #    then:
-             
-             
+
+
 #             - switch.turn_off: pvbrain_relay_mode_batterie
 #             - switch.turn_on: pvbrain_relay_mode_EDF
 #             - delay: 10s
-#             - select.set: 
-#                 id: pvbrain_axpert_output_source_priority_select 
+#             - select.set:
+#                 id: pvbrain_axpert_output_source_priority_select
 #                 option: "Solar Utility Battery"
 
 
 #  - id: script_mode_batterie
 #    then:
-            
-            
+
+
 #            - select.set:
-#                id: pvbrain_axpert_output_source_priority_select 
+#                id: pvbrain_axpert_output_source_priority_select
 #                option: "Solar Battery Utility"
 #            - delay: 10s
 #            - switch.turn_off: pvbrain_relay_mode_EDF
