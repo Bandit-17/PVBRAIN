@@ -720,6 +720,26 @@ button:
       then:
         - pzemac.reset_energy: pvbrain_pzem_solar
 
+#########   GRID-TIRED or OFF-GRID #####
+#  - platform: template
+#    name: pvbrain_mode_EDF
+#    id: pvbrain_mode_EDF
+#    icon: "mdi:transmission-tower-import"
+#    on_press:
+#      then:
+#        - switch.turn_off: pvbrain_ats_automatic_control
+#        - script.execute: script_mode_EDF
+
+#  - platform: template
+#    name: pvbrain_mode_batterie
+#    id: pvbrain_mode_batterie
+#    icon: "mdi:solar-panel"
+#    on_press:
+#      then:
+#        - switch.turn_off: pvbrain_ats_automatic_control
+#        - script.execute: script_mode_batterie
+
+#########   OFF-GRID or GRID #####
   - platform: template
     name: pvbrain_from_solar_to_grid
     id: pvbrain_from_solar_to_grid
@@ -746,6 +766,52 @@ switch:
     name: pvbrain_ats_automatic_control
     id: pvbrain_ats_automatic_control
     optimistic: true
+#########   GRID-TIRED or OFF-GRID #####
+  - platform: gpio
+    id: pvbrain_relay_mode_EDF
+    name: pvbrain_relay_mode_EDF
+    pin:
+      pcf8574: pvbrain_hub
+      # Use pin number 1
+      number: 0
+      # One of INPUT or OUTPUT
+      mode: OUTPUT
+      inverted: true
+
+  - platform: gpio
+    id: pvbrain_relay_mode_batterie
+    name: pvbrain_relay_mode_batterie
+    pin:
+      pcf8574: pvbrain_hub
+      # Use pin number 1
+      number: 1
+      # One of INPUT or OUTPUT
+      mode: OUTPUT
+      inverted: true
+  
+  - platform: gpio
+    id: pvbrain_relay_3
+    name: pvbrain_relay_3
+    pin:
+      pcf8574: pvbrain_hub
+      # Use pin number 1
+      number: 2
+      # One of INPUT or OUTPUT
+      mode: OUTPUT
+      inverted: true
+  
+  - platform: gpio
+    id: pvbrain_relay_4
+    name: pvbrain_relay_4
+    pin:
+      pcf8574: pvbrain_hub
+      # Use pin number 1
+      number: 3
+      # One of INPUT or OUTPUT
+      mode: OUTPUT
+      inverted: true
+
+#########   OFF-GRID or GRID ######
 
   - platform: gpio
     id: pvbrain_relay_axpert
@@ -1323,7 +1389,13 @@ sensor:
                 - switch.is_on: pvbrain_ats_automatic_control
                 - lambda: |-
                     return id(pvbrain_jkbms_total_voltage).state < id(pvbrain_inverseur_tension_bascule_solar_to_grid_number).state;
-            then:
+            then: 
+            
+#########   GRID-TIRED or OFF-GRID #####
+
+#              - script.execute: script_mode_EDF
+
+#########   OFF-GRID or GRID ######
               - script.execute: script_from_solar_to_grid
 
         - if:  ##### si tension batterie > seuil haut    ######
@@ -1333,6 +1405,9 @@ sensor:
                 - lambda: |-
                     return id(pvbrain_jkbms_total_voltage).state > id(pvbrain_inverseur_tension_bascule_solar_to_grid_number).state;
             then:
+#########   GRID-TIRED or OFF-GRID #####              
+#              - script.execute: script_mode_batterie
+#########   OFF-GRID or GRID ######
               - script.execute: script_from_grid_to_solar
 
     current:
@@ -1560,6 +1635,9 @@ text_sensor:
       # name: "pvbrain_jkbms manufacturer"
 
 script:
+
+#########   OFF-GRID or GRID ######
+
   - id: script_from_solar_to_grid
     then:
       - if:  ##### cas 1 (principal) on teste si AC_in:off, onduleur:on, ENEDIS:on => sequence solar to grid ####
@@ -1595,6 +1673,32 @@ script:
             - switch.turn_on: pvbrain_relay_axpert  ### turn on solar inverter
             - delay: 13s
             - switch.turn_off: pvbrain_relay_inversor_solar_input  ### switch to PV source
+            
+            
+ #########   GRID-TIRED or OFF-GRID #####           
+#  - id: script_mode_EDF
+#    then:
+             
+             
+#             - switch.turn_off: pvbrain_relay_mode_batterie
+#             - switch.turn_on: pvbrain_relay_mode_EDF
+#             - delay: 10s
+#             - select.set: 
+#                 id: pvbrain_axpert_output_source_priority_select 
+#                 option: "Solar Utility Battery"
+
+
+#  - id: script_mode_batterie
+#    then:
+            
+            
+#            - select.set:
+#                id: pvbrain_axpert_output_source_priority_select 
+#                option: "Solar Battery Utility"
+#            - delay: 10s
+#            - switch.turn_off: pvbrain_relay_mode_EDF
+#            - switch.turn_on: pvbrain_relay_mode_batterie
+
 select:
   - platform: pipsolar
     pipsolar_id: pip8048
@@ -1606,6 +1710,6 @@ select:
         "Solar only": "POP01"
         "Solar Battery Utility": "POP02"
       statusmap:
-        "0": "Utility first"
-        "1": "Solar only"
+        "0": "Utility Solar Battery"
+        "1": "Solar Utility Battery"
         "2": "Solar Battery Utility"
