@@ -1389,8 +1389,8 @@ sensor:
                 - switch.is_on: pvbrain_ats_automatic_control
                 - lambda: |-
                     return id(pvbrain_jkbms_total_voltage).state < id(pvbrain_inverseur_tension_bascule_solar_to_grid_number).state;
-            then: 
-            
+            then:
+
 #########   GRID-TIRED or OFF-GRID #####
 
 #              - script.execute: script_mode_EDF
