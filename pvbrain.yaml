@@ -818,7 +818,7 @@ switch:
     name: pvbrain_relay_axpert
     pin:
       pcf8574: pvbrain_hub
-      # Use pin number 1
+      # Use pin number 0
       number: 4
       # One of INPUT or OUTPUT
       mode: OUTPUT
