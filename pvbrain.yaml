@@ -893,7 +893,7 @@ sensor:
     power:
       name: "pvbrain_grid_puissance"
       unit_of_measurement: W
-      accuracy_decimals: 2
+      accuracy_decimals: 1
       id: pvbrain_grid_puissance
     frequency:
       name: "pvbrain_grid_frequence"
@@ -924,7 +924,7 @@ sensor:
     name: "pvbrain_grid_du_jour"
     power_id: pvbrain_grid_puissance
     unit_of_measurement: "kWh"
-    accuracy_decimals: 2
+    accuracy_decimals: 1
     id: pvbrain_grid_puissance_du_jour
     method: trapezoid
     filters:
@@ -936,7 +936,7 @@ sensor:
     name: "pvbrain_grid_veille"
     id: template_pvbrain_grid_veille
     unit_of_measurement: "kWh"
-    accuracy_decimals: 2
+    accuracy_decimals: 1
     icon: mdi:power
     update_interval: 10s
     lambda: return (id(template_pvbrain_grid_veille).state = id(pvbrain_grid_veille_global));
@@ -945,7 +945,7 @@ sensor:
     name: "pvbrain_grid_puissance_apparente"
     id: pvbrain_grid_puissance_apparente
     unit_of_measurement: "VA"
-    accuracy_decimals: 2
+    accuracy_decimals: 1
     update_interval: 5s
     icon: mdi:power
     lambda: |-
@@ -958,10 +958,10 @@ sensor:
     name: "pvbrain_grid_puissance_reactive"
     id: pvbrain_grid_puissance_reactive
     unit_of_measurement: "VAr"
-    accuracy_decimals: 2
+    accuracy_decimals: 1
     update_interval: 5s
     icon: mdi:power
-    lambda: return id(pvbrain_grid_puissance).state * sin(acos(id(pvbrain_grid_facteur_puissance).state));
+    lambda: return id(pvbrain_grid_puissance_apparente).state * sin(acos(id(pvbrain_grid_facteur_puissance).state));
 
   ########### PZEM2 SOLAR PV ##################
 
@@ -1007,7 +1007,7 @@ sensor:
     name: "pvbrain_solar_du_jour"
     power_id: pvbrain_solar_puissance
     unit_of_measurement: "kWh"
-    accuracy_decimals: 2
+    accuracy_decimals: 1
     id: pvbrain_solar_puissance_du_jour
     method: trapezoid
     filters:
@@ -1019,7 +1019,7 @@ sensor:
     name: pvbrain_solar_veille
     id: template_pvbrain_solar_veille
     unit_of_measurement: "kWh"
-    accuracy_decimals: 2
+    accuracy_decimals: 1
     icon: mdi:power
     update_interval: 10s
     lambda: |-
@@ -1029,7 +1029,7 @@ sensor:
     name: "pvbrain_solar_puissance_apparente"
     id: pvbrain_solar_puissance_apparente
     unit_of_measurement: "VA"
-    accuracy_decimals: 2
+    accuracy_decimals: 1
     update_interval: 5s
     icon: mdi:power
     lambda: |-
@@ -1042,10 +1042,10 @@ sensor:
     name: "pvbrain_solar_puissance_reactive"
     id: pvbrain_solar_puissance_reactive
     unit_of_measurement: "VAr"
-    accuracy_decimals: 2
+    accuracy_decimals: 1
     update_interval: 5s
     icon: mdi:power
-    lambda: return id(pvbrain_solar_puissance).state * sin(acos(id(pvbrain_solar_facteur_puissance).state));
+    lambda: return id(pvbrain_solar_puissance_apparente).state * sin(acos(id(pvbrain_solar_facteur_puissance).state));
 
   ############# BME 280  ##################
 
