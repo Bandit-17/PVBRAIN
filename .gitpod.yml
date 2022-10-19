@@ -1,4 +1,4 @@
 tasks:
-  - init: pyenv install 3.9.0
+  - before: pyenv install 3.9.0
   - init: pyenv local 3.9.0
   
