@@ -1,0 +1,12 @@
+tasks:
+  - before: pyenv install 3.9.0
+  - before: pyenv local 3.9.0
+  - before: pip install --upgrade pip
+  - before: pip install voluptuous
+  - before: pip install --upgrade pyyaml
+  - before: pip install colorama
+  - before: pip install tornado
+  - before: pip install zeroconf
+  - before: pip install git+https://github.com/esphome/esphome.git
+  - before: pip install esphome_dashboard
+  - command: esphome compile pvbrain.yaml
