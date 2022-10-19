@@ -10,7 +10,7 @@ tasks:
       pip install colorama &&
       pip install tornado &&
       pip install git+https://github.com/esphome/esphome.git &&
-      pip install esphome_dashboard
+      pip install esphome_dashboard &&
       gp sync-done bundle # 'bundle' is an arbitrary name
     
   - name: esphome_compile
