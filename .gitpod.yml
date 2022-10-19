@@ -1,4 +1,18 @@
 tasks:
-  - before: pyenv install 3.9.0
-  - init: pyenv local 3.9.0
-  
+  - name: esphome_install
+    init: >
+      bundle install &&
+      pyenv install 3.9.0 &&
+      pyenv local 3.9.0 &&
+      pip install --upgrade pip &&
+      pip install voluptuous &&
+      pip install --upgrade pyyaml &&
+      pip install colorama &&
+      pip install tornado &&
+      pip install git+https://github.com/esphome/esphome.git &&
+      pip install esphome_dashboard
+      gp sync-done bundle # 'bundle' is an arbitrary name
+    
+  - name: esphome_compile
+    init: gp sync-await bundle # wait for the above 'init' to finish
+    command: esphome dashboard config/
