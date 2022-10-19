@@ -1,7 +1,6 @@
 tasks:
   - name: esphome_install
     init: >
-      bundle install &&
       pyenv install 3.9.0 &&
       gp sync-done bundle # 'bundle' is an arbitrary name
     
