@@ -1,4 +1,3 @@
-
 esphome:
   name: pvbrain
   platformio_options:
