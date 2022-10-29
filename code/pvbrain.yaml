@@ -1454,7 +1454,7 @@ sensor:
     # battery_strings:
       # name: pvbrain_jkbms_battery_strings
 
- - platform: template
+  - platform: template
     name: pvbrain_jkbms_c_values
     id: pvbrain_jkbms_c_values
     unit_of_measurement: "c"
