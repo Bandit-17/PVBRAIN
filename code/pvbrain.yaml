@@ -652,16 +652,6 @@ number:
     restore_value: true
     mode: 'slider'
     
-  - platform: template
-    name: pvbrain_jkbms_c_values
-    id: pvbrain_jkbms_c_values
-    unit_of_measurement: "c"
-    accuracy_decimals: 3
-    update_interval: 2s
-    icon: mdi:current-dc
-    lambda: |-
-        return ( fabs(float(id(pvbrain_jkbms_current).state)) / float(id(pvbrain_jkbms_total_battery_capacity_setting).state) );     
-
 binary_sensor:
   - platform: status
     name: "pvbrain_status"
@@ -1464,6 +1454,16 @@ sensor:
     # battery_strings:
       # name: pvbrain_jkbms_battery_strings
 
+ - platform: template
+    name: pvbrain_jkbms_c_values
+    id: pvbrain_jkbms_c_values
+    unit_of_measurement: "c"
+    accuracy_decimals: 3
+    update_interval: 2s
+    icon: mdi:current-dc
+    lambda: |-
+        return ( fabs(float(id(pvbrain_jkbms_current).state)) / float(id(pvbrain_jkbms_total_battery_capacity_setting).state) );     
+        
   - platform: template
     name: "pvbrain_jkbms_battery_charging_current"
     id: pvbrain_jkbms_battery_charging_current
