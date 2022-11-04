@@ -87,49 +87,25 @@ time:
       hours: 23
       then:
 
-#        - sensor.template.publish:
-#            id: template_pvbrain_grid_veille
-#            state: !lambda return id(pvbrain_grid_puissance_du_jour).state;
-
         - globals.set:
             id: pvbrain_grid_veille_global
             value: !lambda return (id(pvbrain_grid_veille_global) = id(pvbrain_grid_puissance_du_jour).state);
-
-#        - sensor.template.publish:
-#            id: template_pvbrain_solar_veille
-#            state: !lambda return id(pvbrain_solar_puissance_du_jour).state;
 
         - globals.set:
             id: pvbrain_solar_veille_global
             value: !lambda return (id(pvbrain_solar_veille_global) = id(pvbrain_solar_puissance_du_jour).state);
 
-#        - sensor.template.publish:
-#            id: template_pvbrain_axpert_PV_power_total_veille
-#            state: !lambda return id(pvbrain_axpert_PV_power_total_du_jour).state;
-
         - globals.set:
             id: pvbrain_axpert_PV_power_total_veille_global
             value: !lambda return (id(pvbrain_axpert_PV_power_total_veille_global) = id(pvbrain_axpert_PV_power_total_du_jour).state);
-
-#        - sensor.template.publish:
-#            id: template_pvbrain_axpert_ac_output_active_power_veille
-#            state: !lambda return id(pvbrain_axpert_ac_output_active_power_total_du_jour).state;
 
         - globals.set:
             id: pvbrain_axpert_ac_output_active_power_veille_global
             value: !lambda return (id(pvbrain_axpert_ac_output_active_power_veille_global) = id(pvbrain_axpert_ac_output_active_power_total_du_jour).state);
 
-#        - sensor.template.publish:
-#            id: template_pvbrain_jkbms_battery_charging_power_veille
-#            state: !lambda return id(pvbrain_jkbms_battery_charging_power_total_du_jour).state;
-
         - globals.set:
             id: pvbrain_jkbms_battery_charging_power_veille_global
             value: !lambda return (id(pvbrain_jkbms_battery_charging_power_veille_global) = id(pvbrain_jkbms_battery_charging_power_total_du_jour).state);
-
-#        - sensor.template.publish:
-#            id: template_pvbrain_jkbms_battery_discharging_power_veille
-#            state: !lambda return id(pvbrain_jkbms_battery_discharging_power_total_du_jour).state;
 
         - globals.set:
             id: pvbrain_jkbms_battery_discharging_power_veille_global
@@ -159,13 +135,12 @@ uart:
 ######################### DEVICES UART/MODBUS based ###################
 
 jk_modbus:
-  id: modbus1
-  uart_id: uart0
-
+  - id: modbus1
+    uart_id: uart0
 jk_bms:
-  id: bms0
-  jk_modbus_id: modbus1
-
+  - id: bms1
+    jk_modbus_id: modbus1
+    
 pipsolar:
   uart_id: uart1
   id: pip8048
@@ -1343,6 +1318,7 @@ sensor:
   ############# JKBMS ##################
 
   - platform: jk_bms
+    jk_bms_id: bms1
     min_cell_voltage:
       name: "pvbrain_jkbms min cell voltage"
     max_cell_voltage:
@@ -1639,6 +1615,7 @@ text_sensor:
        # name: pvbrain_axpert_last_qpiri
 
   - platform: jk_bms
+    jk_bms_id: bms1
     errors:
       name: "pvbrain_jkbms errors"
     operation_mode:
