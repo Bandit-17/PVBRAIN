@@ -15,9 +15,9 @@ The PVbrain represents a joint work between e-2-nomy [https://www.youtube.com/c/
 
 ## __Main PCB Layout__:
 
-![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain1.JPG)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain1.jpg)
 ![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain2.JPG)
-![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain3d.JPG)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/pvbrain3d.jpg)
 
 __PCB assembly__:
 
