@@ -165,6 +165,26 @@ The yaml used last template number/select/switch esphome objects. Everything is 
 If you install the two PZEM 004T V3, both have the same modbus adress by factory default. You need to change the adress for the second one. To do these please refer to this (french) video:
 https://www.youtube.com/watch?v=O6QESZfJMcM&t=58s
 
+## __NEW it is possible to add up to 8 additional UARTs__:
+
+For this you will need the DF-ROBOT WK2132 card (ref.: DFR0627).
+You will need to modify the code and pass the uart_1 (pin 01 and 03) into a 2nd I2C bus.
+
+Two cards are available for this: 
+
+-The 1st (the smallest) is used for serial sensors.
+
+-The 2nd integrates the possibility of installing converters (Rs232/Rs485 and CAN).
+
+
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/carte%20DF-ROBOT%201.jpg)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/carte%20DF-ROBOT%202.jpg)
+![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/carte%20DF-ROBOT%203.jpg)
+
+
+The esphome integration was carried out by DrCoolZic.
+a second integration and in progress with another 2UART to SPI expansion card
+
 
 
 If you need some extra informations, please feel free to contact us in Discord at: [https://reseautono.me](https://reseautono.me)  => channel _#bla-bla-pvbrain_
