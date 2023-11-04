@@ -95,7 +95,7 @@ please find all electronic parts required to assemble the PVBrain:
 
 __Before to compile__:
 
-You need __absoluptly__ to compile the yaml from a Linux or a Windows box, not (yet) from HASSIO directly since the HASSIO addon module __don't support yet the arduino V2.0 Lib__. The arduino V2.0 lib is required ir order to increase the loop stack memory and then runs all entities in memory
+You can compile the yaml from a Linux, a Windows machine or from HASSIO with the ESPhome . The arduino library V2.0 is required to increase the loop stack memory and then execute all entities in memory.
 
 Here is a (french) video showhing how to install ESPhome on a windows platform:
 [https://www.youtube.com/watch?v=lawVsX6XMeE](https://www.youtube.com/watch?v=lawVsX6XMeE)
