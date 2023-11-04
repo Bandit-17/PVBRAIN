@@ -79,6 +79,14 @@ globals:
   - id: pvbrain_jkbms_battery_discharging_power_veille_global
     type: float
     restore_value: true
+  
+  # - id: pvbrain_jkbms2_battery_charging_power_veille_global
+  #   type: float
+  #   restore_value: true
+
+  # - id: pvbrain_jkbms2_battery_discharging_power_veille_global
+  #   type: float
+  #   restore_value: true
 
 time:
   platform: sntp
