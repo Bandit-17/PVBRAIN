@@ -22,6 +22,9 @@ external_components:
 #   - source: my_components
 #     components: [pipsolar]
 #     refresh: 0s
+  - source: github://pr#5218
+    components: [wk2132]
+    refresh: 0s
 
 # Enable logging
 logger:
@@ -111,6 +114,14 @@ time:
             id: pvbrain_jkbms_battery_discharging_power_veille_global
             value: !lambda return (id(pvbrain_jkbms_battery_discharging_power_veille_global) = id(pvbrain_jkbms_battery_discharging_power_total_du_jour).state);
 
+        # - globals.set:
+        #     id: pvbrain_jkbms2_battery_charging_power_veille_global
+        #     value: !lambda return (id(pvbrain_jkbms2_battery_charging_power_veille_global) = id(pvbrain_jkbms2_battery_charging_power_total_du_jour).state);
+
+        # - globals.set:
+        #     id: pvbrain_jkbms2_battery_discharging_power_veille_global
+        #     value: !lambda return (id(pvbrain_jkbms2_battery_discharging_power_veille_global) = id(pvbrain_jkbms2_battery_discharging_power_total_du_jour).state);
+
 ####################### UART #######################
 
 uart:
@@ -137,9 +148,18 @@ uart:
 jk_modbus:
   - id: modbus1
     uart_id: uart_0
+  # - id: jkbms_0
+  #   uart_id: uart_00
+  # - id: jkbms_1
+  #   uart_id: uart_01
 jk_bms:
   - id: bms1
     jk_modbus_id: modbus1
+  # - id: bms_0
+  #   jk_modbus_id: jkbms_0
+  # - id: bms_1
+  #   jk_modbus_id: jkbms_1
+
     
 pipsolar:
   uart_id: uart_1
@@ -158,11 +178,36 @@ i2c:
   scan: true
   frequency: 50kHz
   id: bus_i2c
+  # - id: bus_i2c
+  #   sda: GPIO21
+  #   scl: GPIO22
+  #   scan: true
+  #   frequency: 50kHz
+  
+  # - id: bus_b
+  #   sda: 01
+  #   scl: 03
+  #   scan: True
+  #   frequency: 800kHz
 
 pcf8574:
   - id: pvbrain_hub
     address: 0x20
     pcf8575: true
+
+# wk2132:
+#   - address: 0x70
+#     id: uart_bridge0
+#     i2c_id: bus_b
+#     uart:
+#       - uart_id: uart_00
+#         channel: 0
+#         baud_rate: 115200
+
+#         #parity: even
+#       - uart_id: uart_01
+#         channel: 1
+#         baud_rate: 115200
 
 # ads1115:
   # - address: 0x48
@@ -692,6 +737,25 @@ binary_sensor:
       // Grid is disconnected
       return false;
 
+  - platform: jk_bms
+    # jk_bms_id: bms_0
+    jk_bms_id: bms1
+    charging:
+      name: "pvbrain_jkbms charging"
+    discharging:
+      name: "pvbrain_jkbms discharging"
+    balancing:
+      name: "pvbrain_jkbms balancing"
+
+  # - platform: jk_bms
+  #   jk_bms_id: bms_1
+  #   charging:
+  #     name: "pvbrain_jkbms2 charging"
+  #   discharging:
+  #     name: "pvbrain_jkbms2 discharging"
+  #   balancing:
+  #     name: "pvbrain_jkbms2 balancing"
+
 button:
   - platform: template
     name: "pvbrain_grid_reset_energy"
@@ -856,6 +920,20 @@ switch:
       # name: "pvbrain_axpert_pv_ok_condition_for_parallel"
     # pv_power_balance:
       # name: "pvbrain_axpert_pv_power_balance"
+
+  - platform: jk_bms
+    # jk_bms_id: bms_0
+    jk_bms_id: bms1
+    charging:
+      name: "pvbrain_jkbms_charging"
+    discharging:
+      name: "pvbrain_jkbms_discharging"
+  # - platform: jk_bms
+  #   jk_bms_id: bms_1
+  #   charging:
+  #     name: "pvbrain_jkbms2_charging"
+  #   discharging:
+  #     name: "pvbrain_jkbms2_discharging"
 
 sensor:
   - platform: wifi_signal
@@ -1318,6 +1396,7 @@ sensor:
   ############# JKBMS ##################
 
   - platform: jk_bms
+    # jk_bms_id: bms_0
     jk_bms_id: bms1
     min_cell_voltage:
       name: "pvbrain_jkbms min cell voltage"
@@ -1631,6 +1710,189 @@ text_sensor:
     # manufacturer:
       # name: "pvbrain_jkbms manufacturer"
 
+##################    JKBMS 2 ###########################
+
+#   - platform: jk_bms
+#     jk_bms_id: bms_1
+#     min_cell_voltage:
+#       name: "pvbrain_jkbms2 min cell voltage"
+#       id: pvbrain_jkbms2_min_cell_voltage
+#     max_cell_voltage:
+#       name: "pvbrain_jkbms2 max cell voltage"
+#     min_voltage_cell:
+#       name: "pvbrain_jkbms2_min voltage cell"
+#     max_voltage_cell:
+#       name: "pvbrain_jkbms2_max voltage cell"   
+#     actual_battery_capacity:
+#       name: "pvbrain_jkbms2_actual battery capacity"
+#     delta_cell_voltage:
+#       name: "pvbrain_jkbms2 delta cell voltage"
+#     average_cell_voltage:
+#       name: "pvbrain_jkbms2_average_cell_voltage"
+#     cell_voltage_1:
+#       name: "pvbrain_jkbms2 cell voltage 1"
+#     cell_voltage_2:
+#       name: "pvbrain_jkbms2 cell voltage 2"
+#     cell_voltage_3:
+#       name: "pvbrain_jkbms2 cell voltage 3"
+#     cell_voltage_4:
+#       name: "pvbrain_jkbms2 cell voltage 4"
+#     cell_voltage_5:
+#       name: "pvbrain_jkbms2 cell voltage 5"
+#     cell_voltage_6:
+#       name: "pvbrain_jkbms2 cell voltage 6"
+#     cell_voltage_7:
+#       name: "pvbrain_jkbms2 cell voltage 7"
+#     cell_voltage_8:
+#       name: "pvbrain_jkbms2 cell voltage 8"
+#     cell_voltage_9:
+#       name: "pvbrain_jkbms2 cell voltage 9"
+#     cell_voltage_10:
+#       name: "pvbrain_jkbms2 cell voltage 10"
+#     cell_voltage_11:
+#       name: "pvbrain_jkbms2 cell voltage 11"
+#     cell_voltage_12:
+#       name: "pvbrain_jkbms2 cell voltage 12"
+#     cell_voltage_13:
+#       name: "pvbrain_jkbms2 cell voltage 13"
+#     cell_voltage_14:
+#       name: "pvbrain_jkbms2 cell voltage 14"
+#     cell_voltage_15:
+#       name: "pvbrain_jkbms2 cell voltage 15"
+#     cell_voltage_16:
+#       name: "pvbrain_jkbms2 cell voltage 16"
+#     power_tube_temperature:
+#       name: "pvbrain_jkbm2 power tube temperature"
+#     temperature_sensor_1:
+#       name: "pvbrain_jkbms2 temperature sensor 1"
+#     temperature_sensor_2:
+#       name: "pvbrain_jkbms2 temperature sensor 2"
+#     power:
+#       name: "pvbrain_jkbms2 power"
+#     total_voltage:
+#       name: "pvbrain_jkbms2 total voltage"
+#       id: pvbrain_jkbms2_total_voltage
+#     current:
+#       name: "pvbrain_jkbms2 current"
+#       id: pvbrain_jkbms2_current
+# #      filters:
+# #        - multiply: -1
+#     capacity_remaining:
+#       name: "pvbrain_jkbms2 capacity remaining"
+#       id: pvbrain_jkbms2_capacity_remaining
+#     charging_cycles:
+#       name: "pvbrain_jkbms2 charging cycles"
+# #    total_charging_cycle_capacity:
+# #      name: "pvbrain_jkbms total charging cycle capacity"
+#     cell_voltage_overvoltage_protection:
+#       name: pvbrain_jkbm2_voltage_overvoltage_protection
+#     cell_voltage_overvoltage_recovery:
+#       name: pvbrain_jkbms2_voltage_overvoltage_recovery
+#     # cell_voltage_overvoltage_delay:
+#       # name: "pvbrain_jkbms voltage overvoltage delay"
+#     cell_voltage_undervoltage_protection:
+#       name: pvbrain_jkbms2_voltage_undervoltage_protection
+#     cell_voltage_undervoltage_recovery:
+#       name: pvbrain_jkbms2_voltage_undervoltage_recovery"
+#     # cell_voltage_undervoltage_delay:
+#       # name: "pvbrain_jkbms voltage undervoltage delay"
+#     total_battery_capacity_setting:
+#       name: pvbrain_jkbms2_total_battery_capacity_setting
+#       id: pvbrain_jkbms2_total_battery_capacity_setting
+#     errors_bitmask:
+#       name: pvbrain_jkbms2_errors_bitmask
+#   - platform: template
+#     name: "pvbrain_jkbms2_battery_charging_current"
+#     id: pvbrain_jkbms2_battery_charging_current
+#     unit_of_measurement: "A"
+#     accuracy_decimals: 1
+#     update_interval: 2s
+#     icon: mdi:current-dc
+#     lambda: |-
+#       if (id(pvbrain_jkbms2_current).state > 0.0f) {
+#         return id(pvbrain_jkbms2_current).state;
+#       }
+#       return 0.0f;
+#   - platform: template
+#     name: "pvbrain_jkbms2_battery_charging_power"
+#     id: pvbrain_jkbms2_battery_charging_power
+#     unit_of_measurement: "W"
+#     accuracy_decimals: 1
+#     update_interval: 2s
+#     icon: mdi:power
+#     lambda: |-
+#       if (id(pvbrain_jkbms2_current).state > 0.0f) {
+#         return id(pvbrain_jkbms2_total_voltage).state * id(pvbrain_jkbms2_current).state;
+#       }
+#       return 0.0f;
+#   - platform: total_daily_energy
+#     name: pvbrain_jkbms2_battery_charging_power_total_du_jour
+#     power_id: pvbrain_jkbms2_battery_charging_power
+#     unit_of_measurement: "kWh"
+#     accuracy_decimals: 2
+#     id: pvbrain_jkbms2_battery_charging_power_total_du_jour
+#     method: trapezoid
+#     filters:
+#       # Multiplication factor from W to kW is 0.001
+#       - multiply: 0.001
+#     icon: mdi:counter
+
+#   - platform: template
+#     name: pvbrain_jkbms2_battery_charging_power_veille
+#     id: template_pvbrain_jkbms2_battery_charging_power_veille
+#     unit_of_measurement: "kwh"
+#     accuracy_decimals: 2
+#     icon: mdi:power
+#     update_interval: 10s
+#     lambda: |-
+#       return (id(template_pvbrain_jkbms2_battery_charging_power_veille).state = id(pvbrain_jkbms2_battery_charging_power_veille_global));
+#   - platform: template
+#     name: "pvbrain_jkbms2_battery_discharging_current"
+#     id: pvbrain_jkbms2_battery_discharging_current
+#     unit_of_measurement: "A"
+#     accuracy_decimals: 1
+#     update_interval: 2s
+#     icon: mdi:current-dc
+#     lambda: |-
+#       if (id(pvbrain_jkbms2_current).state < 0.0f) {
+#         return id(pvbrain_jkbms2_current).state;
+#       }
+#       return 0.0f;
+#   - platform: template
+#     name: "pvbrain_jkbms2_battery_discharging_power"
+#     id: pvbrain_jkbms2_battery_discharging_power
+#     unit_of_measurement: "W"
+#     accuracy_decimals: 1
+#     update_interval: 2s
+#     icon: mdi:power
+#     lambda: |-
+#       if (id(pvbrain_jkbms2_current).state < 0.0f) {
+#         return -1.0 * id(pvbrain_jkbms2_total_voltage).state * id(pvbrain_jkbms2_current).state;
+#       }
+#       return 0.0f;
+#   - platform: total_daily_energy
+#     name: pvbrain_jkbms2_battery_discharging_power_total_du_jour
+#     power_id: pvbrain_jkbms2_battery_discharging_power
+#     unit_of_measurement: "kWh"
+#     accuracy_decimals: 2
+#     id: pvbrain_jkbms2_battery_discharging_power_total_du_jour
+#     method: trapezoid
+#     filters:
+#       # Multiplication factor from W to kW is 0.001
+#       - multiply: 0.001
+#     icon: mdi:counter
+
+#   - platform: template
+#     name: pvbrain_jkbms2_battery_discharging_power_veille
+#     id: template_pvbrain_jkbms2_battery_discharging_power_veille
+#     unit_of_measurement: "kwh"
+#     accuracy_decimals: 2
+#     icon: mdi:power
+#     update_interval: 10s
+#     lambda: |-
+#       return (id(template_pvbrain_jkbms2_battery_discharging_power_veille).state = id(pvbrain_jkbms2_battery_discharging_power_veille_global));
+
+
 script:
 
 #########   OFF-GRID or GRID ######
@@ -1710,3 +1972,85 @@ select:
         "0": "Utility Solar Battery"
         "1": "Solar Utility Battery"
         "2": "Solar Battery Utility"
+
+  - platform: pipsolar
+    pipsolar_id: pip8048
+    output_source_priority:
+      id: pvbrain_axpert_charger_source_priority_select 
+      name: pvbrain_axpert_charger_source_priority_select
+      optionsmap:
+#        "Utility first": "PCP00"
+        "Solar first": "PCP01"
+        "Solar and utility": "PCP02"
+        "Only solar": "PCP03"
+      statusmap:
+#        "0": "Utility first"
+        "1": "Solar first"
+        "2": "Solar and utility"
+        "3": "Only solar"
+
+  - platform: pipsolar
+    pipsolar_id: pip8048
+    current_max_ac_charging_current:
+      id: pvbrain_axpert_current_max_ac_charging_current_select 
+      name: pvbrain_axpert_current_max_ac_charging_current_select
+      optionsmap:
+        "2A": "MUCHGC0002"
+        "10A": "MUCHGC0010"
+        "20A": "MUCHGC0020"
+        "30A": "MUCHGC0030"
+        "40A": "MUCHGC0040"
+        "50A": "MUCHGC0050"
+        "60A": "MUCHGC0060"
+        "70A": "MUCHGC0070"
+        "80A": "MUCHGC0080"
+        "90A": "MUCHGC0090"
+        "100A": "MUCHGC0100"
+        "110A": "MUCHGC0110"
+        "120A": "MUCHGC0120"
+      statusmap:
+        "2": "2A"
+        "10": "10A"
+        "20": "20A"
+        "30": "30A"       
+        "40": "40A"
+        "50": "50A"
+        "60": "60A"
+        "70": "70A"
+        "80": "80A"
+        "90": "90A"
+        "100": "100A"
+        "110": "110A"
+        "120": "120A"
+  
+  - platform: pipsolar
+    pipsolar_id: pip8048
+    current_max_charging_current:
+      id: pvbrain_axpert_current_max_charging_current_select 
+      name: pvbrain_axpert_current_max_charging_current_select
+      optionsmap:
+        "10A": "MCHGC010"
+        "20A": "MCHGC020"
+        "30A": "MCHGC030"
+        "40A": "MCHGC040"
+        "50A": "MCHGC050"
+        "60A": "MCHGC060"
+        "70A": "MCHGC070"
+        "80A": "MCHGC080"
+        "90A": "MCHGC090"
+        "100A": "MCHGC100"
+        "110A": "MCHGC110"
+        "120A": "MCHGC120"
+      statusmap:
+        "10": "10A"
+        "20": "20A"
+        "30": "30A"       
+        "40": "40A"
+        "50": "50A"
+        "60": "60A"
+        "70": "70A"
+        "80": "80A"
+        "90": "90A"
+        "100": "100A"
+        "110": "110A"
+        "120": "120A"
