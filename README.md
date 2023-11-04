@@ -100,7 +100,7 @@ You can compile the yaml from a Linux, a Windows machine or from HASSIO with the
 Here is a (french) video showhing how to install ESPhome on a windows platform:
 [https://www.youtube.com/watch?v=lawVsX6XMeE](https://www.youtube.com/watch?v=lawVsX6XMeE)
 
-__compilation procedure__:
+__compilation procedure with Windows__:
 
 ### step 1:
 - run anaconda powershell prompt (of course after anaconda been installed on your machine)
