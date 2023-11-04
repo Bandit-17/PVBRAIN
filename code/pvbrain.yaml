@@ -1,12 +1,12 @@
 esphome:
   name: pvbrain
-  platformio_options:
-    build_flags:
-      - -DCONFIG_ARDUINO_LOOP_STACK_SIZE=32768  # 16384 # 8192 # 16384
-    platform_packages:
-      - framework-arduinoespressif32 @ https://github.com/espressif/arduino-esp32.git#2.0.2
-    platform:
-      - https://github.com/platformio/platform-espressif32.git#feature/arduino-upstream
+  # platformio_options:
+  #   build_flags:
+  #     - -DCONFIG_ARDUINO_LOOP_STACK_SIZE=32768  # 16384 # 8192 # 16384
+  #   platform_packages:
+  #     - framework-arduinoespressif32 @ https://github.com/espressif/arduino-esp32.git#2.0.2
+  #   platform:
+  #     - https://github.com/platformio/platform-espressif32.git#feature/arduino-upstream
 
 esp32:
   board: esp32dev
@@ -19,12 +19,12 @@ external_components:
     refresh: 0s
   - source: github://syssi/esphome-pipsolar@pip8048
     refresh: 0s
-#   - source: my_components
-#     components: [pipsolar]
-#     refresh: 0s
-  - source: github://pr#5218
-    components: [wk2132]
-    refresh: 0s
+  # - source: my_components
+  #   components: [pipsolar]
+  #   refresh: 0s
+  # - source: github://pr#5218
+  #   components: [wk2132]
+  #   refresh: 0s
 
 # Enable logging
 logger:
