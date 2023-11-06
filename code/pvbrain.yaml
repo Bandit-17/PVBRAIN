@@ -12,6 +12,8 @@ esp32:
   board: esp32dev
   framework:
     type: arduino
+    version: 2.0.11
+    platform_version: 6.4.0
     # version: latest # 2.0.0
 
 external_components:
