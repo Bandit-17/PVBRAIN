@@ -71,11 +71,11 @@ Please check this youtube video explaining the operation of the OPTION2 board (i
 [![YoutubeImage](https://img.youtube.com/vi/SeJNZs6UUr4/0.jpg)](https://youtu.be/SeJNZs6UUr4)
 | Front                     | Back                      |
 | :-----------------------: | :-----------------------: |
-| <img src="../main/option_2.PNG" width="1068" /> | <img src="../main/option_2-2.PNG" width="1068" /> |
+| <img src="../main/Pictures/option_2.PNG" width="1068" /> | <img src="../main/Pictures/option_2-2.PNG" width="1068" /> |
 
 | 3D View |
 | :-----------------------: |
-|<img src="../main/option-2-3D.PNG" width="480" /> |
+|<img src="../main/Pictures/option-2-3D.PNG" width="480" /> |
 
 The 3 UART outputs are arranged on a terminal block:
 - one of the inputs has the RS323/TTL converter option (UART0)
