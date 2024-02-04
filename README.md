@@ -21,16 +21,17 @@
 
 > [!NOTE]
 > This PCB uses the excellent ESPhome integrations done by [![Static Badge](https://img.shields.io/badge/Syssi-black?logo=git&style=flat)](https://github.com/syssi).
+> 
 > The __PVbrain__ represents a joint work between [![Static Badge](https://img.shields.io/badge/SeByDocKy-black?logo=git&style=flat)](https://github.com/SeByDocKy) of the [![Static Badge](https://img.shields.io/badge/Youtube-e--2--nomy-black?style=social&logo=youtube)](https://www.youtube.com/@e2nomy) and [![Static Badge](https://img.shields.io/badge/Bandit--17-black?logo=git&style=flat)](https://github.com/Bandit-17).
 
 # __Main PCB Layout__:
 | Front                     | Back                      |
 | :-----------------------: | :-----------------------: |
-| <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/pvbrain1.jpg" width="1068" /> | <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/pvbrain2.JPG" width="1068" /> |
+| <img src="../main/Pictures/pvbrain1.jpg" width="1068" /> | <img src="../main/Pictures/pvbrain2.JPG" width="1068" /> |
 
 | 3D View |
 | :-----------------------: |
-|<img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/pvbrain3d.jpg" width="480" /> |
+|<img src="../main/Pictures/pvbrain3d.jpg" width="480" /> |
 
 ## PCB assembly:
 
@@ -41,11 +42,11 @@ Please check this youtube video how to assemble your PVbrain PCB
 ## Gerber files:
 
 Please find all gerber files required for the PCB into the following zip file:
-[Gerber](https://github.com/Bandit-17/PVBRAIN/blob/main/Hardware/Gerber_PVbrain_V1.0.zip)
+[Gerber](../main/Hardware/Gerber_PVbrain_V1.0.zip)
 
 ## Bill Of Materials (BOM):
 please find all electronic parts required to assemble the PVBrain:
-[BOM](https://github.com/Bandit-17/PVBRAIN/blob/main/Hardware/BOM_PVrain_and_option_1.xls)
+[BOM](../main/Hardware/BOM_PVrain_and_option_1.xls)
 
 # Additional daughter board addons:
 
@@ -53,16 +54,16 @@ please find all electronic parts required to assemble the PVBrain:
 An optional addon card can be pluged to monitor direct voltages of your PV strings (up to two)
 | Front                     | Back                      |
 | :-----------------------: | :-----------------------: |
-| <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/pvbrain-option1.JPG" width="1068" /> | <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/pvbrain-option1-arrière.JPG" width="1068" /> |
+| <img src="../main/Pictures/pvbrain-option1.JPG" width="1068" /> | <img src="../main/Pictures/pvbrain-option1-arrière.JPG" width="1068" /> |
 
 | 3D View |
 | :-----------------------: |
-|<img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/pvbrain-option1-3D1.JPG" width="480" /> |
+|<img src="../main/Pictures/pvbrain-option1-3D1.JPG" width="480" /> |
 
 ## Gerber files:
 
 Please find all gerber files required for the addon PCB into the following zip file:
-[Gerber](https://github.com/Bandit-17/PVBRAIN/blob/main/Hardware/option_1/Gerber_carte_option_1.zip)
+[Gerber](../main/Hardware/option_1/Gerber_carte_option_1.zip)
 
 ##  Option_2:
 
@@ -70,11 +71,11 @@ Please check this youtube video explaining the operation of the OPTION2 board (i
 [![YoutubeImage](https://img.youtube.com/vi/SeJNZs6UUr4/0.jpg)](https://youtu.be/SeJNZs6UUr4)
 | Front                     | Back                      |
 | :-----------------------: | :-----------------------: |
-| <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/option%202.PNG" width="1068" /> | <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/option%202-2.PNG" width="1068" /> |
+| <img src="../main/option_2.PNG" width="1068" /> | <img src="../main/option_2-2.PNG" width="1068" /> |
 
 | 3D View |
 | :-----------------------: |
-|<img src="https://github.com/Bandit-17/PVBRAIN/blob/main/option-2-3D.PNG" width="480" /> |
+|<img src="../main/option-2-3D.PNG" width="480" /> |
 
 The 3 UART outputs are arranged on a terminal block:
 - one of the inputs has the RS323/TTL converter option (UART0)
@@ -94,21 +95,21 @@ Options for future development:
 
 __Gerber files:
 
-Please find all gerber files required for the PCB into the following zip file: [Gerber](https://github.com/Bandit-17/PVBRAIN/blob/main/Hardware/option_2/Gerber_carte_option_2.zip)
+Please find all gerber files required for the PCB into the following zip file: [Gerber](../main/Hardware/option_2/Gerber_carte_option_2.zip)
 
-With additional diagram: [Schema](https://github.com/Bandit-17/PVBRAIN/blob/main/Hardware/option_2/Schematic_carte_option_2.pdf)
+With additional diagram: [Schema](../main/Hardware/option_2/Schematic_carte_option_2.pdf)
 
-To finish the list of components: [BOM](https://github.com/Bandit-17/PVBRAIN/blob/main/Hardware/option_2/BOM_carte_option_2.xls)
+To finish the list of components: [BOM](../main/Hardware/option_2/BOM_carte_option_2.xls)
 
 # Wiring your hybrid inverter and your BMS with the PVbrain PCB:
 
 | Off-Grid / Grid           | Off-Grid / Gried-Tired    |
 | :-----------------------: | :-----------------------: |
-| <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/schema_grid.jpg" width="1068" /> | <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/schema_grid-tired.jpg" width="1068" /> |
+| <img src="../main/Pictures/schema_grid.jpg" width="1068" /> | <img src="../main/Pictures/schema_grid-tired.jpg" width="1068" /> |
 
 ### Example of realization with an Voltronic Axpert max II (pip8048 branch)
 
-| <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/20220505_113239.jpg" width="1068" /> | <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/20220505_161247.jpg" width="1068" /> |
+| <img src="../main/Pictures/20220505_113239.jpg" width="1068" /> | <img src="../main/Pictures/20220505_161247.jpg" width="380" /> |
 | :-----------------------: | :-----------------------: |
 
 # To compile the ESPhome pvbrain.yaml file:
@@ -125,7 +126,7 @@ Here is a (french) video showhing how to install ESPhome on a windows platform:
 ### step 1:
 - run anaconda powershell prompt (of course after anaconda been installed on your machine)
 - create a local folder via the mkdir command, _e.g._  `>mkdir pvbrain` and enter inside _via_ the command cd, e.g `>cd pvbrain`.
-- please download the [pvbrain.yaml](https://github.com/Bandit-17/PVBRAIN/blob/main/Software_esphome/pvbrain.yaml) in your local folder
+- please download the [pvbrain.yaml](../main/Software_esphome/pvbrain.yaml) in your local folder
 > [!NOTE]
 > The latest version of this file can now be retrieved from [![Static Badge](https://img.shields.io/badge/SeByDocKy-black?logo=git&style=flat)](https://github.com/SeByDocKy) [![Static Badge](https://img.shields.io/badge/Github-myESPhome-darkgreen?logo=github&logoColor=lightgrey&style=plastic)](https://github.com/SeByDocKy/myESPhome/blob/main/code/pvbrain.yaml)
 - in the same folder, create an empty `secrets.yaml` file where you will write inside:
@@ -185,7 +186,7 @@ Please add (all) associated entities in your favorarite HA dashboard.
 
 Example of my current PVbrain dashboard with Entities allowing to control some important inverter parameters.
 
-| <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/HA_view_1.jpg" width="1068" /> | <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/HA_view_2.jpg" width="1068" /> |
+| <img src="../main/Pictures/HA_view_1.jpg" width="1068" /> | <img src="../main/Pictures/HA_view_2.jpg" width="1068" /> |
 | :-----------------------: | :-----------------------: |
 
 The yaml used last template number/select/switch esphome objects.
@@ -193,7 +194,9 @@ The yaml used last template number/select/switch esphome objects.
 Everything is directly imported from ESPhome into HA. No extra HA configuration required.
 
 ## Multi-PZEM 004T V3 configuration:
-If you install the two PZEM 004T V3, both have the same modbus adress by factory default. You need to change the adress for the second one. To do these please refer to this (french) video:
+If you install the two PZEM 004T V3, both have the same modbus adress by factory default. 
+
+You need to change the adress for the second one. To do these please refer to this (french) video:
 [![YoutubeImage](https://img.youtube.com/vi/O6QESZfJMcM/0.jpg)](https://www.youtube.com/watch?v=O6QESZfJMcM)
 
 # NEW it is possible to add up to 8 additional UARTs:
@@ -208,9 +211,8 @@ Two cards are available for this:
 -The 2nd integrates the possibility of installing converters (Rs232/Rs485 and CAN).
 
 
-![alt text](https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/carte_DF-ROBOT_1.jpg)
-| <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/carte_DF-ROBOT_2.jpg" width="1068" /> | <img src="https://github.com/Bandit-17/PVBRAIN/blob/main/Pictures/carte_DF-ROBOT_3.jpg" width="1068" /> |
-| :-----------------------: | :-----------------------: |
+| <img src="../main/Pictures/carte_DF-ROBOT_1.jpg" width="1068" /> | <img src="../main/Pictures/carte_DF-ROBOT_2.jpg" width="400" /> | <img src="../main/Pictures/carte_DF-ROBOT_3.jpg" width="300" /> |
+| :-----------------------: | :-----------------------: | :-----------------------: |
 
 The esphome integration was carried out by [![Static Badge](https://img.shields.io/badge/DrCoolZic-black?logo=git&style=flat)](https://github.com/DrCoolzic).
 A second integration and in progress with another 2UART to SPI expansion card.
